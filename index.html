@@ -189,7 +189,6 @@
                     { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
                   ]
                 },
-
                 {
                   "name": "sourceOptions",
                   "children": [
@@ -199,7 +198,7 @@
                     { "name": "projection: 'EPSG:3857'" },
                     { "name": "queryable: true" },
                     { "name": "queryFormat : 'gml2' , gml2(default) or gml3 or json or geojson or esrijson or text or html '" },
-                    { "name": "queryTitle: field name to use as title (for response as data (not html))" },
+                    { "name": "queryTitle: 'field name to use as title (for response as data (not html))'" },
                     { "name": "queryHtmlTarget : 'innerhtml, newtab or innerhtml " },
                     { "name": "attribution: 'Your copyright/left mention'" },
                     {
@@ -227,15 +226,210 @@
                     {
                       "name": "sourceFields (to control getfeatureinfo responses aliases and displayed field && ogcfilters menu for field/alias/values )",
                       "children": [
-                        { "name": "name: 'fieldname'" },
-                        { "name": "alias: 'Readable Name'" },
-                        { "name": "values: ['array', 'of', 'allowed','values','for','ogcFilters', 'menu' ]" }
+                        {
+                          "name": "[...]",
+                          "children": [
+                            { "name": "name: 'fieldname'" },
+                            { "name": "alias: 'Readable Name'" },
+                            { "name": "values: ['array', 'of', 'allowed','values','for','ogcFilters', 'menu' ]" }
+                            ]
+                    },
+                    { "name": "[...]" }
                       ]
                     },
+                    { "name": "timeFilterable: true" },
+                    {
+                      "name": "timeFilter",
+                      "children": [
+                        { "name": "min: 'fieldname'" },
+                        { "name": "max: 'Readable Name'" },
+                        { "name": "range: true" },
+                        { "name": "type: 'date'" },
+                        { "name": "style: 'slider'" },
+                        { "name": "timeinterval: 2000" },
+                      ]
+                    },
+
                   ]
                 }
               ]
             },
+
+
+            {
+              "name": "WFS",
+              "children": [
+                { "name": "title : 'title'" },
+                { "name": "zIndex : 0 (higher is on top of map)" },
+                { "name": "id : 'constant_and_unique_id_for_url_controls'", },
+                { "name": "visible: false" },
+                { "name": "minResolution: 1" },
+                { "name": "maxResolution: 150" },
+                { "name": "baseLayer: true" },
+                { "name": "opacity: 0.3" },
+                {
+                  "name": "metadata",
+                  "children": [
+                    { "name": "extern: true" },
+                    { "name": "url: 'http://www.perdu.com/'" },
+                    { "name": "abstract: 'My own abstract'" },
+                    { "name": "keywordList : ['MY','OWN','KEYWORD','LIST'] (could be also provided by wmts getcapabilities)" }
+                  ]
+                },
+                {
+                  "name": "download",
+                  "children": [
+                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
+                  ]
+                },
+                {
+                  "name": "sourceOptions",
+                  "children": [
+                    { "name": "type: 'wfs'" },
+                    { "name": "url: 'https://geoegl.msp.gouv.qc.ca/ws/igo_gouvouvert.fcgi?'" },
+                    { "name": "queryTitle: 'field name to use as title'" },
+                    {
+                      "name": "params",
+                      "children": [
+                        { "name": "featureTypes: 'wfs_typename'" },
+                        { "name": "fieldNameGeometry: 'the_geom' Refer to service (&request=Describefeaturetype OR &request=GetFeature&Count=1)  " },
+                        { "name": "maxFeatures: : 10000, (default 5000)" },
+                        { "name": "version:  '2.0.0' Refer to Server GetCapabilites (default 2.0.0) " },
+                        { "name": "outputFormat: :  'application/json' ****  json type format OR gml/3.1.1 ONLY ****' IF set to gml, WFS version will be set to 1.1.0 due to an Openlayers issue" },
+                        { "name": "outputFormatDownload: :  'shp'  To modify download format to enable user to download various format. Refer to Server GetCapabilites" },
+                      ]
+                    },
+                    {
+                      "name": "ogcFilters ***  Refer to http://openlayers.org/en/latest/apidoc/ol.format.filter.html for an operator list and properties.",
+                      "children": [
+                      { "name": "enabled: true" },
+                      { "name": "editable: true" },
+                      {
+                          "name": "filters (EXAMPLE#1)  ",
+                          "children": [
+                            { "name": "operator: 'PropertyIsLike'" },
+                            { "name": "propertyName: 'FieldName'" },
+                            { "name": "pattern: 'String begin with *'" },
+                            { "name": "wildCard: '*'  ( default * )'" },
+                            { "name": "singleChar: '.'  ( default . )'" },
+                            { "name": "escapeChar: '!'  ( default ! )'" },
+                            { "name": "matchCase: false" },
+
+                            ]
+                    },
+                    {
+                          "name": "filters (EXAMPLE#2)",
+                          "children": [
+                            { "name": "logical: 'Or' In the user interface, if a new filter is added, the default operator is 'And' '" },
+                            { "name": "filters: 'Array of properties, above....'" }
+                            ]
+                    },
+
+
+
+                      ]
+                    },
+                    { "name": "legend:", "children" : [
+                    { "name": "Refer to legend section into the vector layer section (below)" }
+                    ] },
+                    {
+                      "name": "sourceFields (to control query aliases and displayed field && ogcfilters menu for field/alias/values )",
+                      "children": [
+                        {
+                          "name": "[...]",
+                          "children": [
+                            { "name": "name: 'fieldname'" },
+                            { "name": "alias: 'Readable Name'" },
+                            { "name": "values: ['array', 'of', 'allowed','values','for','ogcFilters', 'menu' ]" }
+                            ]
+                    },
+                    { "name": "[...]" }
+                      ]
+                    }
+
+                  ]
+                }
+              ]
+            },
+
+
+
+
+            {
+              "name": "Vector (file based)",
+              "children": [
+                { "name": "title : 'title'" },
+                { "name": "zIndex : 0 (higher is on top of map)" },
+                { "name": "id : 'constant_and_unique_id_for_url_controls'", },
+                { "name": "visible: false" },
+                { "name": "minResolution: 1" },
+                { "name": "maxResolution: 150" },
+                { "name": "baseLayer: true" },
+                { "name": "opacity: 0.3" },
+                {
+                  "name": "metadata",
+                  "children": [
+                    { "name": "extern: true" },
+                    { "name": "url: 'http://www.perdu.com/'" },
+                    { "name": "abstract: 'My own abstract'" },
+                    { "name": "keywordList : ['MY','OWN','KEYWORD','LIST'] (could be also provided by wmts getcapabilities)" }
+                  ]
+                },
+                {
+                  "name": "download",
+                  "children": [
+                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
+                  ]
+                },
+                {
+                  "name": "sourceOptions",
+                  "children": [
+                    { "name": "type: 'vector'" },
+                    { "name": "url: 'https://www.donneesquebec.ca/recherche/dataset/e4915d10-9c33-47a8-8e06-cf39306ef583/resource/af782966-3ec4-4ad5-b3b7-630c27165f01/download/vdqvoiepublique.geojson'" },
+                    { "name": "queryTitle: 'field name to use as title'" },
+                    {
+                      "name": "legend",
+                      "children": [
+                        { "name": "title: 'wms_layername'" },
+                        { "name": "collapsed: '1.1.1'" },
+                        { "name": "url: 'https://geoegl.msp.gouv.qc.ca/ws/mffpecofor.fcgi?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=lidar_mnt&format=image/png&STYLE=default'" },
+                        { "name": "html: '<span>Custom legend</span>'" },
+                        { "name": "style", "children": [
+                          { "name": "height: '30px'" },
+                          { "name": "width: '30px'" },
+                          { "name": "text-align: 'center' "},
+                          { "name": "line-height: '30px' "},
+                          { "name": "background-color: 'rgba(140, 140, 255, 0.3)' "},
+                          { "name": "border: '1px solid rgba(140, 140, 255, 1.0)' "},                          
+
+
+                        ] }
+                      ]
+                    },
+                    {
+                      "name": "sourceFields (to control query responses aliases and displayed field)",
+                      "children": [
+                        {
+                          "name": "[...]",
+                          "children": [
+                            { "name": "name: 'fieldname'" },
+                            { "name": "alias: 'Readable Name'" },
+                            { "name": "values: ['array', 'of', 'allowed','values','for','ogcFilters', 'menu' ]" }
+                            ]
+                    },
+                    { "name": "[...]" }
+                      ]
+                    }
+
+                  ]
+                }
+              ]
+            },
+
+
+
+
+
 
 
 
