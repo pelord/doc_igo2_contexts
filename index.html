@@ -425,19 +425,67 @@
                 }
               ]
             },
+            {"name": "toolbar: [...]",
+                  "children": [
+                    { "name": "directions" },
+                    { "name": "searchResults" },
+                    { "name": "mapDetails" },
+                    { "name": "print" },
+                    { "name": "shareMap" },
+                    { "name": "about" },
+                    { "name": "catalog" },
+                    { "name": "contextManager" },
+                    { "name": "timeAnalysis" },
+                    { "name": "importExport" },
+                    { "name": "ogcFilter" },
 
+                    ]
+            },
+            {"name": "tools: [...]",
+                  "children": [
+                    { "name": "directions" },
+                    { "name": "searchResults", "children": [{ "name": "options","children": [{ "name": "focusFirst: false" }]}]},
+                    { 
+                      "name": "mapDetails", 
+                      "children": [
+                        { "name": "options",
+                        "children": [
+                          { "name": "toggleLegendOnVisibilityChange: false"},
+                          { "name": "layerListControls", "children": [
+                            { "name": "excludeBaseLayers: true" },
+                            { "name": "showToolbar: 'always' never or default" },
+                            { "name": "toolbarThreshold: 50 (default 5 = to let appear the toolbar if showToolbar is set to default)" },
+                            { "name": "sortedAlpha: false  (sort the layers alphabetically)" },
+                            { "name": "onlyVisible: false  (only show in the table of content the visible layers)" },
+                            { "name": "onlyInRange: false  (only show in the table of content the layers in scale range)" }
+                          ]}
 
-
-
-
-
+                          ]
+                        }
+                      ]
+                    },
+                    { "name": "mapDetails" },
+                    { "name": "print" },
+                    { "name": "shareMap" },
+                    { "name": "about", 
+                      "children": [
+                        { "name": "options",
+                        "children": [
+                          { "name": "html: '<h2 style='color:green;'>Welcome .............</h2>'"}
+                          ]
+                        }
+                      ] },
+                    { "name": "catalog" }
+                    ]
+            }
 
 
 
 
 
           ]
-        }
+        },
+
 
 
       ]
