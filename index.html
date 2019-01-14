@@ -69,17 +69,16 @@
                   ]
                 },
                 {
-                  "name": "download",
-                  "children": [
-                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
-                  ]
-                },
-
-                {
                   "name": "sourceOptions",
                   "children": [
                     { "name": "type: 'OSM'" },
+                    {
+                      "name": "download",
+                      "children": [
+                        { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
                   ]
+                },
+                  ],
                 }
               ]
             },
@@ -105,13 +104,6 @@
                   ]
                 },
                 {
-                  "name": "download",
-                  "children": [
-                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
-                  ]
-                },
-
-                {
                   "name": "sourceOptions",
                   "children": [
                     { "name": "type: 'wmts'" },
@@ -121,6 +113,12 @@
                     { "name": "matrixSet: 'EPSG_3857'" },
                     { "name": "format: 'image/jpeg'" },
                     { "name": "attribution: 'Your copyright/left mention'" },
+                    {
+                      "name": "download",
+                      "children": [
+                        { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
+                        ]
+                    },
 
                   ]
                 }
@@ -148,18 +146,17 @@
                   ]
                 },
                 {
-                  "name": "download",
-                  "children": [
-                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
-                  ]
-                },
-                {
                   "name": "sourceOptions",
                   "children": [
                     { "name": "type: 'tms'" },
                     { "name": "url: 'https://geoegl.msp.gouv.qc.ca/cgi-wms/mapcache.fcgi/tms/1.0.0/carte_gouv_qc_ro@EPSG_3857/{z}/{x}/{-y}.png'" },
                     { "name": "attribution: 'Your copyright/left mention'" },
-
+                    {
+                      "name": "download",
+                      "children": [
+                        { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
+                      ]
+                    },
                   ]
                 }
               ]
@@ -187,12 +184,6 @@
                   ]
                 },
                 {
-                  "name": "download",
-                  "children": [
-                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
-                  ]
-                },
-                {
                   "name": "sourceOptions",
                   "children": [
                     { "name": "type: 'wms'" },
@@ -204,6 +195,12 @@
                     { "name": "queryTitle: 'field name to use as title (for response as data (not html))'" },
                     { "name": "queryHtmlTarget : 'innerhtml, newtab or innerhtml " },
                     { "name": "attribution: 'Your copyright/left mention'" },
+                    {
+                      "name": "download",
+                      "children": [
+                        { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
+                      ]
+                    },
                     {
                       "name": "params",
                       "children": [
@@ -280,12 +277,6 @@
                   ]
                 },
                 {
-                  "name": "download",
-                  "children": [
-                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
-                  ]
-                },
-                {
                   "name": "sourceOptions",
                   "children": [
                     { "name": "type: 'wfs'" },
@@ -300,6 +291,12 @@
                         { "name": "version:  '2.0.0' Refer to Server GetCapabilites (default 2.0.0) " },
                         { "name": "outputFormat: :  'application/json' ****  json type format OR gml/3.1.1 ONLY ****' IF set to gml, WFS version will be set to 1.1.0 due to an Openlayers issue" },
                         { "name": "outputFormatDownload: :  'shp'  To modify download format to enable user to download various format. Refer to Server GetCapabilites" },
+                      ]
+                    },
+                    {
+                      "name": "download",
+                      "children": [
+                        { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
                       ]
                     },
                     {
@@ -379,17 +376,17 @@
                   ]
                 },
                 {
-                  "name": "download",
-                  "children": [
-                    { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
-                  ]
-                },
-                {
                   "name": "sourceOptions",
                   "children": [
                     { "name": "type: 'vector'" },
                     { "name": "url: 'https://www.donneesquebec.ca/recherche/dataset/e4915d10-9c33-47a8-8e06-cf39306ef583/resource/af782966-3ec4-4ad5-b3b7-630c27165f01/download/vdqvoiepublique.geojson'" },
                     { "name": "queryTitle: 'field name to use as title'" },
+                    {
+                      "name": "download",
+                      "children": [
+                        { "name": "url: 'www.hostname.com/files/fichiers.zip'" },
+                      ]
+                    },
                     {
                       "name": "legend",
                       "children": [
